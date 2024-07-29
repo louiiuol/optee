@@ -60,4 +60,10 @@ describe("Pharmacy", () => {
       new Pharmacy([new Drug("Fervex", 0, 6)]).updateBenefitValue()
     ).toEqual([new Drug("Fervex", -1, 0)]);
   });
+
+  it("'Dafalgan' degrades in Benefit twice as fast as normal drugs", () => {
+    expect(
+      new Pharmacy([new Drug("Dafalgan", 1, 6)]).updateBenefitValue()
+    ).toEqual([new Drug("Dafalgan", 0, 4)]);
+  });
 });
