@@ -18,7 +18,8 @@ export class Pharmacy {
     this.drugs = this.drugs.map(currentDrug => {
       // Decrease benefit for common drugs
       if (currentDrug.canExpire() && currentDrug.benefit > 0) {
-        currentDrug.benefit = currentDrug.benefit - 1;
+        currentDrug.benefit =
+          currentDrug.benefit - (currentDrug.name == "Dafalgan" ? 2 : 1);
       }
       if (
         ["Herbal Tea", "Fervex"].includes(currentDrug.name) &&
